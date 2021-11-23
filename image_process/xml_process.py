@@ -2,8 +2,8 @@
 # @Time : 2020/12/22 17:51
 # @Author : Wu Xianning
 # @Desc : xml_process.py
-import os
-from xml.etree.ElementTree import ElementTree, Element
+# import os
+# from xml.etree.ElementTree import ElementTree, Element
 from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
@@ -117,7 +117,7 @@ if __name__ == "__main__":
     import os
     import xml.etree.ElementTree as ET
 
-    path = u"D:/wxn/2020_12_work/20201221dataset/xml"  # xml文件所在的目录
+    path = r"D:\wxn\code\python\fq\baotou\temp20210922140313"  # xml文件所在的目录
     files = os.listdir(path)  # 得到文件夹下所有文件名称
     for xmlFile in files:
         xmlPath = os.path.join(path, xmlFile)
@@ -126,14 +126,14 @@ if __name__ == "__main__":
 
         for child in root:
             # print('1:',child.tag,child.text)
-            if child.tag == 'object':
+            if child.tag == 'path':
                 for sub in child:
                     # print('2:',sub.tag, sub.text)
-                    if sub.tag == 'name':
-                        if sub.text == 'redcarwwd':
-                            print("{}".format(xmlPath))
-                            sub.text = 'redcar'
-        tree.write(xmlPath)
+                    print(sub.text)
+                    # if sub.text == 'redcarwwd':
+                    #     print("{}".format(xmlPath))
+                    #     sub.text = 'redcar'
+        # tree.write(xmlPath)
 
 
     # width_arr = []
